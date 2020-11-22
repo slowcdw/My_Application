@@ -221,8 +221,9 @@
 
     <ImageView
         android:id="@+id/iv_actor_foto3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_actor_foto2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -233,8 +234,11 @@
 
     <ImageView
         android:id="@+id/iv_actor_foto1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:scaleType="fitXY"
+
         app:layout_constraintBottom_toBottomOf="@+id/iv_actor_foto"
         app:layout_constraintEnd_toStartOf="@+id/iv_actor_foto2"
         app:layout_constraintHorizontal_bias="0.5"
@@ -244,8 +248,9 @@
 
     <ImageView
         android:id="@+id/iv_actor_foto2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_actor_foto1"
         app:layout_constraintEnd_toStartOf="@+id/iv_actor_foto3"
         app:layout_constraintHorizontal_bias="0.5"
@@ -255,10 +260,12 @@
 
     <ImageView
         android:id="@+id/iv_actor_foto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="7dp"
+        android:scaleType="fitXY"
+        app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toStartOf="@+id/iv_actor_foto1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -271,7 +278,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="109dp"
         android:fontFamily="@font/roboto"
         android:text="@string/actor_name"
         android:textColor="@color/white"
