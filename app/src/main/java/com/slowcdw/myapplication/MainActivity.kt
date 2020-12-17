@@ -10,7 +10,8 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction()
                 .apply {
-                    add(R.id.main_container, FragmentMoviesDetails())
+                    //add(R.id.main_container, FragmentMoviesDetails())
+                    add(R.id.main_container, FragmentMoviesList())
                     commit()
                 }
     }
