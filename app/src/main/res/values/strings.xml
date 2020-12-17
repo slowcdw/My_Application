@@ -23,4 +23,8 @@
     <string name="actor_name1">Chris Evans</string>
     <string name="actor_name2">Mark Ruffalo</string>
     <string name="actor_name3">Chris Hemsworth</string>
+    <string name="aim">aim</string>
+    <string name="movies_list">Movies list</string>
+    <string name="preview_img_1">prew_img_1</string>
+    <string name="preview_text_ganre">Action, Adventure, Drama</string>
 </resources>
