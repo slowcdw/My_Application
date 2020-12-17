@@ -14,6 +14,7 @@
     <string name="img_back">img_back</string>
     <string name="age">13+</string>
     <string name="caption">Avengers:\nEnd Game</string>
+    <string name="caption_one_line">Avengers: End Game</string>
     <string name="ganre">Action, Adventure, Fantasy</string>
     <string name="reviews">125 REVIEWS</string>
     <string name="storyline">Storyline</string>
@@ -27,4 +28,6 @@
     <string name="movies_list">Movies list</string>
     <string name="preview_img_1">prew_img_1</string>
     <string name="preview_text_ganre">Action, Adventure, Drama</string>
+    <string name="duration">137 MIN</string>
+    <string name="age_plus">13+</string>
 </resources>

@@ -2,11 +2,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/background"
+            android:layout_height="match_parent"
             tools:context=".MovieDetailsActivity">
             <ImageView
                 android:id="@+id/imageView3"
@@ -32,26 +36,50 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
+            <View
+                android:id="@+id/preview_border"
+                android:layout_width="170dp"
+                android:layout_height="296dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="102dp"
+                android:background="@drawable/preview_film"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-                <ImageView
-                    android:id="@+id/preview_img_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/preview_img_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:contentDescription="@string/preview_img_1"
+                app:layout_constraintStart_toStartOf="@+id/preview_border"
+                app:layout_constraintTop_toTopOf="@+id/preview_border"
+                app:srcCompat="@drawable/movie_list_1" />
 
-                    android:contentDescription="@string/preview_img_1"
-                    app:srcCompat="@drawable/movie_list_1" />
 
-                <View
-                    android:layout_width="166dp"
-                    android:layout_height="250dp"
-                    android:background="@drawable/gradient_drawable"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="@+id/preview_img_1"
-                    app:layout_constraintEnd_toEndOf="@+id/preview_img_1"
-                    app:layout_constraintStart_toStartOf="@+id/preview_img_1"
-                    app:layout_constraintTop_toTopOf="@+id/preview_img_1" />
+            <View
+                android:id="@+id/vw_age"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/age"
+                app:layout_constraintStart_toStartOf="@+id/preview_img_1"
+                app:layout_constraintTop_toTopOf="@+id/preview_border" />
 
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/gradient_drawable"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/preview_img_1"
+                app:layout_constraintEnd_toEndOf="@+id/preview_img_1"
+                app:layout_constraintStart_toStartOf="@+id/preview_img_1"
+                app:layout_constraintTop_toTopOf="@+id/preview_img_1" />
 
             <View
                 android:id="@+id/view3"
@@ -62,30 +90,30 @@
                 android:layout_marginTop="230dp"
                 android:background="@color/gradient_end"
                 android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/view2" />
+                app:layout_constraintBottom_toBottomOf="@+id/preview_img_1"
+                app:layout_constraintStart_toStartOf="parent" />
 
 
             <TextView
                 android:id="@+id/ganre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
+                android:layout_marginStart="6dp"
                 android:layout_marginBottom="22dp"
                 android:fontFamily="@font/roboto"
                 android:text="@string/preview_text_ganre"
                 android:textColor="@color/red"
                 android:textSize="8sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintBottom_toBottomOf="@+id/preview_img_1"
+                app:layout_constraintStart_toStartOf="@+id/preview_img_1" />
 
             <ImageView
                 android:id="@+id/iv_star_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="6dp"
                 android:layout_marginTop="4dp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/preview_img_1"
                 app:layout_constraintTop_toBottomOf="@+id/ganre"
                 app:srcCompat="@drawable/ic_baseline_star_red_8" />
 
@@ -147,5 +175,66 @@
                 app:layout_constraintStart_toEndOf="@+id/iv_star_5"
                 app:layout_constraintTop_toBottomOf="@+id/ganre" />
 
+            <TextView
+                android:id="@+id/title_films"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/caption_one_line"
+                android:alpha="0.85"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/white"
+                android:textFontWeight="900"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/preview_img_1"
+                app:layout_constraintTop_toBottomOf="@+id/preview_img_1" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="4sp"
+                android:text="@string/duration"
+                android:textColor="@color/grey"
+                android:textFontWeight="900"
+                android:textSize="8sp"
+                app:layout_constraintStart_toStartOf="@+id/preview_img_1"
+                app:layout_constraintTop_toBottomOf="@+id/title_films" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/age_plus"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/white"
+                android:textFontWeight="900"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/vw_age"
+                app:layout_constraintEnd_toEndOf="@+id/vw_age"
+                app:layout_constraintStart_toStartOf="@+id/vw_age"
+                app:layout_constraintTop_toTopOf="@+id/vw_age"
+                android:gravity="center"
+                />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="6dp"
+                app:layout_constraintEnd_toEndOf="@+id/preview_img_1"
+                app:layout_constraintTop_toTopOf="@+id/preview_img_1"
+                app:srcCompat="@drawable/like" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </FrameLayout>
