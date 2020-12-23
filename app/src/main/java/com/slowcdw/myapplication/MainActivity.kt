@@ -1,17 +1,17 @@
 package com.slowcdw.myapplication
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.security.AccessController.getContext
+import com.slowcdw.myapplication.data.models.Movie
 
 class MainActivity : AppCompatActivity(), FragmentMoviesList.TransactionsFragmentClicks {
 
+//    private var moviePosition: Int = 0
     private val rootFragment =
-            FragmentMoviesList().apply { setClickListener(this@MainActivity) }
+            FragmentMoviesList.newInstance().apply { setClickListener(this@MainActivity) }
 
-    private val detailsFragment =
-            FragmentMoviesDetails().apply { setClickListener(this@MainActivity) }
+//    private val detailsFragment =
+//            FragmentMoviesDetails.newInstance(moviePosition).apply { setClickListener(this@MainActivity) }
 
     private var count: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +26,9 @@ class MainActivity : AppCompatActivity(), FragmentMoviesList.TransactionsFragmen
 
     }
 
-    override fun addDetailsFragment() {
+    override fun addDetailsFragment(moviePosition: Int) {
+        val detailsFragment =
+            FragmentMoviesDetails.newInstance(moviePosition).apply { setClickListener(this@MainActivity) }
         supportFragmentManager.beginTransaction()
                 .apply {
                     add(R.id.main_container, detailsFragment)
